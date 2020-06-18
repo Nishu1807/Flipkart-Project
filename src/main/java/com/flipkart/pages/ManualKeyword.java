@@ -10,7 +10,7 @@ public class ManualKeyword {
 	
 	public static WebDriver driver;
 	static Actions action = null;
-	
+	/ndnkn
 	public static void openBrowser() {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Lenovo\\Downloads\\chromedriver\\chromedriver.exe");
 		//WebDriverManager.chromedriver().setup();
