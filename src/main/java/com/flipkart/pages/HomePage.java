@@ -16,19 +16,21 @@ public class HomePage {
 //	By signup;
 	
 	public void loginBoxCloseButton() {
-		Keyword.driver.findElement(By.xpath("//button[contains(@class,'_2AkmmA _29YdH8')]")).click();
+		Keyword.getDriver().findElement(By.xpath("//button[contains(@class,'_2AkmmA _29YdH8')]")).click();
 		//Keyword.driver.findElement(loginBoxCloseButton).click();
 	}
 	public void mouseHoverOnLoginButton() {
-		WebElement logins	=Keyword.driver.findElement(By.xpath("//a[contains(text(),'Login')]"));
+		WebElement logins	=Keyword.getDriver().findElement(By.xpath("//a[contains(text(),'Login')]"));
 		//Keyword.driver.findElement(login).click();
 		Actions acts = Keyword.action.moveToElement(logins);
 		acts.perform();
 	}
 	
 	public void clickOnSignUpLink() {
-		Keyword.driver.findElement(By.xpath("//div[contains(text(),'Sign Up')]")).click();
+		Keyword.getDriver().findElement(By.xpath("//div[contains(text(),'Sign Up')]")).click();
 		//Keyword.driver.findElement(signup).click();
 	}
+	
+	
 
 }

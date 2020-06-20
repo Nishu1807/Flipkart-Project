@@ -10,8 +10,8 @@ import org.testng.annotations.AfterMethod;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Keyword {
-	public static WebDriver driver;
+	public class Keyword {
+	private static WebDriver driver;
 	static Actions action = null; 
 	
 	
@@ -75,6 +75,16 @@ public class Keyword {
 	public static void closeAllBrowser() {
 		driver.quit();
 
+	}
+
+	public static WebDriver getDriver() {
+		return driver;
+	}
+
+	public static void setDriver(WebDriver driver) {
+		if(null != driver)
+			return;
+		Keyword.driver = driver;
 	}
 
 	

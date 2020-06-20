@@ -7,6 +7,8 @@
         <methods>
           <include name="clickOnContinueButtonTest"/>
           <include name="enterMobileNumberTest"/>
+          <include name="clickOnLoginButtonTest"/>
+          <include name="clickAndEnterPasswordTest"/>
         </methods>
       </class> <!-- com.flipkartproject.test.CustomerCreationPageTests -->
     </classes>
