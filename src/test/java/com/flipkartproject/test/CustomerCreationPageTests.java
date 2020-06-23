@@ -13,7 +13,6 @@ public class CustomerCreationPageTests {
 	
 	HomePage home=PageFactory.initElements(Keyword.getDriver(), HomePage.class);
 	CustomerCreationPage customer= new CustomerCreationPage();//PageFactory.initElements(Keyword.driver, CustomerCreationPage.class);
-	String browserName = null;
 	
 	@Test(priority=0)
 	public void enterMobileNumberTest() {
