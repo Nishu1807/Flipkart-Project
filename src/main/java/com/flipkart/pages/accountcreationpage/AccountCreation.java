@@ -1,9 +1,11 @@
 package com.flipkart.pages.accountcreationpage;
-
 import org.openqa.selenium.By;
-
 import com.flipkart.pages.Keyword;
 
+/**
+ * This class for ceating customer account.
+ * @author Nisha Patil
+ */
 public class AccountCreation {
 	
 	By createLink=By.cssSelector("a[href='/account/login?signup=true']");

@@ -4,6 +4,10 @@ import org.openqa.selenium.By;
 
 import com.flipkart.pages.Keyword;
 
+/**
+ * Login page class  for login account of existing user.
+ * @author Nisha Patil
+ */
 public class LoginPage {
 	
 	By mobileNumber=By.xpath("//input[@class='_2zrpKA _1dBPDZ']");
