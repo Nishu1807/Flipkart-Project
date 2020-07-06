@@ -9,7 +9,7 @@ import com.flipkart.pages.SearchFunction;
 public class SearchTextboxTest {
 	
 	SearchFunction search= new SearchFunction ();
-	CustomerCreationPage customer= new CustomerCreationPage();
+	
 	
 	@Test
 	public void TC_01()
