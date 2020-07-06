@@ -1,15 +1,16 @@
-package com.flipkart.pages;
+package com.flipkart.pages.loginpage;
 
 import org.openqa.selenium.By;
 
-public class CustomerCreationPage {
+import com.flipkart.pages.Keyword;
+
+/**
+ * Login page class  for login account of existing user.
+ * @author Nisha Patil
+ */
+public class LoginPage {
 	
 	By mobileNumber=By.xpath("//input[@class='_2zrpKA _1dBPDZ']");
-	
-	By clickButton=By.xpath("//button[@class='_2AkmmA _1LctnI _7UHT_c']");
-	
-//	By otp=By.xpath("//input[@maxlength=\"6\"]");
-//	By passwd=By.xpath("//input[@type=\"password\"]");
 	
 	By password=By.xpath("//input[@type='password']");
 	
@@ -18,18 +19,6 @@ public class CustomerCreationPage {
 	public void enterMobileNumber(String value) {
 		Keyword.getDriver().findElement(mobileNumber).sendKeys(value);	
 	}
-	
-	public void clickOnContinueButton() {
-		Keyword.getDriver().findElement(clickButton).click();
-	}
-	
-//	public void enterOTP(String value) {
-//		Keyword.driver.findElement(otp).sendKeys(value);
-//	}
-//		
-//	public void setPassword(String value) {
-//		Keyword.driver.findElement(passwd).sendKeys(value);
-//	}
 	
 	public void clickAndEnterPassword(String value) throws InterruptedException {
 		Thread.sleep(2000);
@@ -40,5 +29,5 @@ public class CustomerCreationPage {
 	public void clickOnLoginButton() {
 		Keyword.getDriver().findElement(login).click();
 	}
-	
+
 }

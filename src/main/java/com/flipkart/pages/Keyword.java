@@ -8,6 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterMethod;
 
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 	public class Keyword {
@@ -26,13 +27,37 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 	 * 
 	 * @param browserName(@code String)
 	 * @author Nisha Patil
-	 * @param browserName 
 	 */
 	
 	public static void openBrowser() {
-		//System.setProperty("webdriver.chrome.driver", "C:\\Users\\Lenovo\\Downloads\\chromedriver\\chromedriver.exe");
-		WebDriverManager.chromedriver().setup();
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Lenovo\\Downloads\\chromedriver\\chromedriver.exe");
+		//WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
+		
+//		switch (browserName) {
+//		case "Chrome":
+//			WebDriverManager.chromedriver().setup();
+//			driver = new ChromeDriver();
+//			break;
+//			
+//		case "Firefox":
+//			WebDriverManager.firefoxdriver().setup();
+//			driver = new FirefoxDriver();
+//			break;
+//			
+//		case "IE":
+//			WebDriverManager.iedriver().setup();
+//			driver = new InternetExplorerDriver();
+//			break;
+//			
+//		case "SAfari":
+//			driver = new SafariDriver();
+//			break;
+//
+//		default:
+//			System.err.println("Invalid browser name: Please refer java doc");
+//			break;
+//		}
 		
 		if(null != driver) {
 			action = new Actions(driver);
@@ -61,7 +86,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 	 * 
 	 * @author Nisha Patil
 	 */
-	
+	@Deprecated
 	public static void closeBrowser() {
 		driver.close();
 	}
