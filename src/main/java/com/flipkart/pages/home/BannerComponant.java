@@ -27,12 +27,7 @@ public class BannerComponant {
 			}
 				
 	}
-	public void isSearchTextboxClicakble()
-	{
-		Keyword.getDriver().findElement(By.xpath("//button[@class=\"vh79eN\"]")).click();
-		
-		
-	}
+	
 	public void isTextPresent()
 	{
 		if(Keyword.getDriver().getPageSource().contains("Search for products, brands and more")){
@@ -42,9 +37,17 @@ public class BannerComponant {
 			}
 	}
 	
-	public void enterText()
+	public void enterText(String value) 
 	{
-		Keyword.getDriver().findElement(By.xpath("//input[@class=\"LM6RPg\"]")).sendKeys("mobile");
+		Keyword.getDriver().findElement(By.xpath("//input[@type=\"text\"]")).sendKeys(value);
+		
+	}
+	public void isSearchTextboxClicakble() throws InterruptedException
+	{
+		//Thread.sleep(5000);
+
+		Keyword.getDriver().findElement(By.xpath("//button[@type=\"submit\"]")).click();
+		
 		
 	}
 	
