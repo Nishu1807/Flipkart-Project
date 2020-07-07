@@ -30,8 +30,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 	 */
 	
 	public static void openBrowser() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Lenovo\\Downloads\\chromedriver\\chromedriver.exe");
-		//WebDriverManager.chromedriver().setup();
+		//System.setProperty("webdriver.chrome.driver", "C:\\Users\\Lenovo\\Downloads\\chromedriver\\chromedriver.exe");
+		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		
 //		switch (browserName) {
