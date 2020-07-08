@@ -39,11 +39,11 @@ public class BannerComponentTest {
 	{
 		search.isTextPresent();
 	}
-	
+	 
 	@Test(priority=1)
 	public void enterTextTest() 
 	{
-		search.enterText("mobile");
+		search.enterText("mobile phone");
 	}
 	@Test(priority=2)
 	public void clickOnSearcTextboxTest() throws InterruptedException
