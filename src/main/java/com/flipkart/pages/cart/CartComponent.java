@@ -15,7 +15,10 @@ public class CartComponent {
 		Keyword.getDriver().findElement(cart).click();
 	}
 
-	public void clickOnShopNow() throws InterruptedException {
+	public void clickOnShopNowButton() throws InterruptedException {
+		Thread.sleep(6000);
+		Keyword.getDriver().findElement(shopping).click();
 	}
+	
 
 }
