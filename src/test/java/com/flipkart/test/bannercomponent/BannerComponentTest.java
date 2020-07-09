@@ -43,7 +43,11 @@ public class BannerComponentTest {
 	@Test(priority=1)
 	public void enterTextTest() 
 	{
-		search.enterText("mobile phone");
+		try {
+			search.enterText("mobile phone");
+		} catch (InterruptedException e) {
+			
+		}
 	}
 	@Test(priority=2)
 	public void clickOnSearcTextboxTest() throws InterruptedException

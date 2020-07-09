@@ -37,9 +37,11 @@ public class BannerComponant {
 			}
 	}
 	
-	public void enterText(String value) 
+	public void enterText(String value) throws InterruptedException 
 	{
-		Keyword.getDriver().findElement(By.xpath("//input[@type=\"text\"]")).sendKeys(value);
+		Keyword.getDriver().findElement(By.xpath("//input[@type='text']")).click();
+		Thread.sleep(2000);
+		Keyword.getDriver().findElement(By.xpath("//input[@type='text']")).sendKeys(value);
 		
 	}
 	public void isSearchTextboxClicakble() throws InterruptedException
