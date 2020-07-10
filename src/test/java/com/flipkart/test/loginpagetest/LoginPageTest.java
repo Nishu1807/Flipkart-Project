@@ -7,6 +7,12 @@ import org.testng.annotations.Test;
 import com.flipkart.pages.Keyword;
 import com.flipkart.pages.loginpage.LoginPage;
 
+/**
+ * LoginPageTest class for user login 
+ * @author Nisha Patil
+ *
+ */
+
 public class LoginPageTest {
 	
 	LoginPage login = PageFactory.initElements(Keyword.getDriver(), LoginPage.class);
