@@ -1,5 +1,8 @@
 package flipkart.test.cart.test;
 
+import java.util.ArrayList;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
@@ -26,7 +29,6 @@ public class CartComponentTest {
 		try {
 			login.clickAndEnterPassword("Harsh0107@");
 		} catch (InterruptedException e) {
-			e.printStackTrace();
 		}
 		login.clickOnLoginButton();
 		Thread.sleep(2000);
@@ -39,7 +41,7 @@ public class CartComponentTest {
 		try {
 			cart.clickOnShopNowButton();
 		} catch (InterruptedException e) {
-			e.printStackTrace();
+			
 		}
 	}
 	
@@ -51,9 +53,26 @@ public class CartComponentTest {
 		try {
 			banner.isSearchTextboxClicakble();
 		} catch (InterruptedException e) {
-			e.printStackTrace();
+		
 		}
 		
 	}
-
+	
+	@Test(priority=3)
+	public void clickOnItemTest() {
+		JavascriptExecutor js = (JavascriptExecutor)Keyword.getDriver();
+		js.executeScript("window.scroll(0,1000)");
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+		}
+		cart.clickOnItem();
+	}
+	
+	@Test(priority=4)
+	public void clickOnAddToCartTest() {
+		ArrayList<String> tabs = new ArrayList<String>(Keyword.getDriver().getWindowHandles());
+		Keyword.getDriver().switchTo().window(tabs.get(1));
+		cart.clickOnAddToCart();
+	}
 }
