@@ -1,4 +1,9 @@
-package com.flipkart.pages;
+package com.flipkart.keywords;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,8 +17,7 @@ import org.testng.annotations.AfterMethod;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 	public class Keyword {
-	private static WebDriver driver;
-	static Actions action = null; 
+	
 	
 	
 	/**
@@ -30,10 +34,10 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 	 */
 	
 	public static void openBrowser() {
-		//System.setProperty("webdriver.chrome.driver", "C:\\Users\\Lenovo\\Downloads\\chromedriver\\chromedriver.exe");
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Lenovo\\Downloads\\chromedriver\\chromedriver.exe");
+		//WebDriverManager.chromedriver().setup();
+		//driver = new ChromeDriver();
+		Constants.driver=new ChromeDriver();
 //		switch (browserName) {
 //		case "Chrome":
 //			WebDriverManager.chromedriver().setup();
@@ -59,8 +63,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 //			break;
 //		}
 		
-		if(null != driver) {
-			action = new Actions(driver);
+		if(null != Constants.driver) {
+			Constants.action = new Actions(Constants.driver);
 		}
 		
 	}
@@ -72,12 +76,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 	 */
 	
 	public static void launchUrl() {
-		driver.get("https://www.flipkart.com");
+		Constants.driver.get("https://www.flipkart.com");
 		maximizeWindow();
 	}
 	
 	public static void maximizeWindow() {
-		driver.manage().window().maximize();
+		Constants.driver.manage().window().maximize();
 		
 	}
 	
@@ -88,7 +92,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 	 */
 	@Deprecated
 	public static void closeBrowser() {
-		driver.close();
+		Constants.driver.close();
 	}
 	
 	/**
@@ -98,20 +102,57 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 	 */
 	
 	public static void closeAllBrowser() {
-		driver.quit();
+		Constants.driver.quit();
 
 	}
 
 	public static WebDriver getDriver() {
-		return driver;
+		return Constants.driver;
 	}
 
 	public static void setDriver(WebDriver driver) {
 		if(null != driver)
 			return;
-		Keyword.driver = driver;
+		Constants.driver = driver;
 	}
 
+	public static String getProperty(String key) {
+		String value = null;
+		try {
+			Constants.fis = new FileInputStream(
+					"D:\\workspace\\FlipkartProject\\src\\main\\resources\\config.properties");
+			Constants.prop = new Properties();
+			Constants.prop.load(Constants.fis);
+			value = Constants.prop.getProperty(key);
+
+		} catch (FileNotFoundException e) {
+			System.out.println("file is not found");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("Unable to load file");
+			e.printStackTrace();
+		}
+
+		return value;
+
+	}
 	
+	public static String getProperty(String key, String filePath) {
+		String value = null;
+		try {
+			Constants.fis = new FileInputStream(filePath);
+			Constants.prop = new Properties();
+			Constants.prop.load(Constants.fis);
+			value = Constants.prop.getProperty(key);
+		} catch (FileNotFoundException e) {
+			System.out.println("file is no found" + filePath);
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("unable to load file" + filePath);
+			e.printStackTrace();
+		}
+
+		return value;
+	}
 
 }
